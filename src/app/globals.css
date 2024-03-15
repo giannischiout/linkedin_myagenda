@@ -1,33 +1,210 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 1.6rem;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.top_navbar {
+  height: 40px;
+  width: 100%;
+  background-color: #131313;
+  padding: 0px 16px;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.top_navbar div {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+}
+
+
+.top_navbar_end {
+  justify-content: flex-end;
+  column-gap: 10px;
+
+}
+
+.main {
+  height: calc(100vh - 110px);
+  background-color: rgb(233, 233, 233);
+}
+
+/* NAVBAR CONTENT */
+nav {
+  background-color: #363636;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+
+}
+
+
+.ghost_iconbtn {
+    display: flex;
+    align-items: center;
+    color:rgb(228, 228, 228);
+    letter-spacing: 1px;
+    font-style: italic;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.ghost_iconbtn svg {
+  font-size: 1.4rem;
+  margin-right: 5px;
+}
+
+.hasUnderline {
+  text-decoration: underline;
+}
+
+
+/* PROFILE BUTTON STYLES */
+.profile_button {
+  border-radius: 50px;
+  background-color: antiquewhite;
+  height: 36px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0px 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.897);
+  font-size: 1.3rem;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 5px;
+
+  
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* GIT BUTTON STLES */
+.github {
+  background-color: #000;
+  border-radius: 30px;
+  min-width: 60px;
+  background-color: rgb(82, 82, 82);
+  color: rgb(245, 245, 245);
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 0px 8px;
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.897);
+}
+
+.github span {
+  margin-bottom: 0px;
+  display: block;
+}
+
+.github svg {
+  margin-right: 5px;
+  font-size: 1.5rem;
 }
