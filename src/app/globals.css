@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -90,6 +91,8 @@ body {
 }
 
 
+
+
 .top_navbar {
   height: 40px;
   width: 100%;
@@ -117,6 +120,7 @@ body {
 .main {
   height: calc(100vh - 110px);
   background-color: rgb(233, 233, 233);
+  display: flex;
 }
 
 /* NAVBAR CONTENT */
@@ -207,4 +211,16 @@ nav {
 .github svg {
   margin-right: 5px;
   font-size: 1.5rem;
+}
+
+
+/* MAIN SECTION */
+.calendar_sidebar {
+  width: 300px;
+  background-color: antiquewhite;
+}
+.calendar_main {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
 }
